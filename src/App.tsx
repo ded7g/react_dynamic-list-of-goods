@@ -15,21 +15,39 @@ export const App: React.FC = () => {
     <div className="App">
       <h1>Dynamic list of Goods</h1>
 
-      <button type="button" data-cy="all-button" onClick={() => {
-        getAll().then(setGoods);
-      }}>
+      <button
+        type="button"
+        data-cy="all-button"
+        onClick={() => {
+          getAll()
+            .then(setGoods)
+            .catch(() => {});
+        }}
+      >
         Load all goods
       </button>
 
-      <button type="button" data-cy="first-five-button" onClick={() => {
-        get5First().then(setGoods);
-      }}>
+      <button
+        type="button"
+        data-cy="first-five-button"
+        onClick={() => {
+          get5First()
+            .then(setGoods)
+            .catch(() => {});
+        }}
+      >
         Load 5 first goods
       </button>
 
-      <button type="button" data-cy="red-button" onClick={() => {
-        getRedGoods().then(setGoods);
-      }}>
+      <button
+        type="button"
+        data-cy="red-button"
+        onClick={() => {
+          getRedGoods()
+            .then(setGoods)
+            .catch(() => {});
+        }}
+      >
         Load red goods
       </button>
 
